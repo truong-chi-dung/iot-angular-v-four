@@ -10,7 +10,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Monitor',
     icon: 'nb-bar-chart',
-    link: '/pages/monitor',
+    link: '/pages/echarts',
   },
   {
     title: 'FEATURES',
