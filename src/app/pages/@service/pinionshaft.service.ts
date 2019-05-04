@@ -8,7 +8,7 @@ import { PinionShaftProduction } from '../@model/pinionshaft-production';
 import { PinionShaftProductionBarChartData } from '../@model/pinionshaft-production-bar-chart-data';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PinionshaftService {
 
@@ -20,7 +20,7 @@ export class PinionshaftService {
 
   getTargetDataUrl              = '/api/pinionshaft-production-info';
   getOkDataUrl                  = '/api/pinionshaft-judg-ok';
-  getNgDataUrl                  = '/api/pinionshaft-judg-ng';  
+  getNgDataUrl                  = '/api/pinionshaft-judg-ng';
   getProductionBarChartDataUrl  = '/api/pinionshaft-judg-ok-ng';
 
   getLeftData(): Observable<PinionShaftMeasureValue[]> {
@@ -34,10 +34,10 @@ export class PinionshaftService {
   getLeftRightData(): Observable<PinionLeftRightMeasureValue> {
     return this.http.get<PinionLeftRightMeasureValue>(this.getLeftRightDataUrl).pipe(
       map(data => new PinionLeftRightMeasureValue().deserialize(data)),
-      catchError(()=>throwError("Data not found"))
+      catchError(() => throwError('Data not found')),
     );
   }
-  
+
   getTargetData(): Observable<PinionShaftProduction[]> {
     return this.http.get<PinionShaftProduction[]>(this.getTargetDataUrl);
   }
@@ -45,7 +45,7 @@ export class PinionshaftService {
   getOkData(): Observable<PinionShaftProduction[]> {
     return this.http.get<PinionShaftProduction[]>(this.getOkDataUrl);
   }
-  
+
   getNgData(): Observable<PinionShaftProduction[]> {
     return this.http.get<PinionShaftProduction[]>(this.getNgDataUrl);
   }

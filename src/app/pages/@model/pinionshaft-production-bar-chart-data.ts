@@ -9,6 +9,5 @@ export class PinionShaftProductionBarChartData implements Deserializable {
 
     deserialize(input: any): this {
         return Object.assign(this, input);
-    }    
-    
+    }
 }

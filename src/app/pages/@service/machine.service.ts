@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Machine } from '../@model/machine';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MachineService {
 
@@ -15,5 +15,4 @@ export class MachineService {
   getMachines(): Observable<Machine[]> {
     return this.http.get<Machine[]>(this.getMachinesUrl);
   }
-  
 }
