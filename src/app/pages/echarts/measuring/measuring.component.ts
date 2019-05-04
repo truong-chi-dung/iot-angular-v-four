@@ -38,10 +38,10 @@ export class MeasuringComponent implements OnInit, OnDestroy {
       .subscribe((data) => {
         this.pinionLeftRightData = data;
         this.pinionLeftRightData.left.map((eachValue) => {
-          this.pinionDataLeftArr.push([eachValue.time, eachValue.measureValue])
+          this.pinionDataLeftArr.push([eachValue.time, eachValue.measureValue]);
         });
         this.pinionLeftRightData.right.map((eachValue) => {
-          this.pinionDataRightArr.push([eachValue.time, eachValue.measureValue])
+          this.pinionDataRightArr.push([eachValue.time, eachValue.measureValue]);
         });
         this.options = {
           tooltip: {
@@ -138,16 +138,16 @@ export class MeasuringComponent implements OnInit, OnDestroy {
           this.pinionShaftService.getLeftRightData()
             .subscribe((data) => {
 
-              console.log(this.speedVal);
+              // console.log(this.speedVal);
 
               this.pinionDataLeftArr = [];
               this.pinionDataRightArr = [];
               this.pinionLeftRightData = data;
               this.pinionLeftRightData.left.map((eachValue) => {
-                this.pinionDataLeftArr.push([eachValue.time, eachValue.measureValue])
+                this.pinionDataLeftArr.push([eachValue.time, eachValue.measureValue]);
               });
               this.pinionLeftRightData.right.map((eachValue) => {
-                this.pinionDataRightArr.push([eachValue.time, eachValue.measureValue])
+                this.pinionDataRightArr.push([eachValue.time, eachValue.measureValue]);
               });
               this.newDataOption = {
                 series: [
