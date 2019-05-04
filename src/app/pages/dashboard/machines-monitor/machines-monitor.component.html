@@ -1,0 +1,26 @@
+<div class="col-xxxl-3 col-md-3 col-sm-3" *ngFor="let machine of machines">    
+  <nb-card status="warning" *ngIf="machine.opStatus==0">
+    <nb-card-header>{{ machine.name }}</nb-card-header>
+    <nb-card-body>
+      Operation status: Stopped
+      <br>
+      Operator: {{ machine.operator }}
+    </nb-card-body>
+  </nb-card>   
+  <nb-card status="success" *ngIf="machine.opStatus==1">
+    <nb-card-header>{{ machine.name }}</nb-card-header>
+    <nb-card-body>
+      Operation status: Running
+      <br>
+      Operator: {{ machine.operator }}
+    </nb-card-body>
+  </nb-card>    
+  <nb-card status="danger" *ngIf="machine.opStatus==2">
+    <nb-card-header>{{ machine.name }}</nb-card-header>
+    <nb-card-body>
+      Operation status: Emergency Stoped
+      <br>
+      Operator: {{ machine.operator }}
+    </nb-card-body>
+  </nb-card>
+</div>
