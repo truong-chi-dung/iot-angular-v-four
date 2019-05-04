@@ -52,7 +52,7 @@ export class ProductionComponent implements OnInit {
             trigger: 'item',
             formatter: function (params: any) {
               const date = new Date(params.value[0]);
-              var dateData = date.getMonth() + "/" + date.getDate() + "-" + date.getHours() + ":" + date.getMinutes();
+              const dateData = date.getMonth() + '/' + date.getDate() + '-' + date.getHours() + ':' + date.getMinutes();
               return dateData + '<br/>' + params.value[1];
             },
             axisPointer: {
@@ -75,8 +75,8 @@ export class ProductionComponent implements OnInit {
               axisLabel: {
                 formatter: (
                   function (value: any) {
-                    var date = new Date(value);
-                    return date.getHours() + ":" + date.getMinutes();
+                    const date = new Date(value);
+                    return date.getHours() + ':' + date.getMinutes();
                   }),
               }
             },
