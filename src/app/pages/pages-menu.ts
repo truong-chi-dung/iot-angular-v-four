@@ -8,6 +8,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Monitor',
+    icon: 'nb-bar-chart',
+    link: '/pages/monitor',
+  },
+  {
     title: 'FEATURES',
     group: true,
   },
