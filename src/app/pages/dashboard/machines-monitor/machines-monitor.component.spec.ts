@@ -8,7 +8,7 @@ describe('MachinesMonitorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MachinesMonitorComponent ]
+      declarations: [ MachinesMonitorComponent ],
     })
     .compileComponents();
   }));

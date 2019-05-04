@@ -4,9 +4,9 @@ import { MachineService } from '../../@service/machine.service';
 import { takeWhile } from 'rxjs/operators';
 
 @Component({
-  selector: 'machines-monitor',
+  selector: 'ngx-machines-monitor',
   templateUrl: './machines-monitor.component.html',
-  styleUrls: ['./machines-monitor.component.scss']
+  styleUrls: ['./machines-monitor.component.scss'],
 })
 export class MachinesMonitorComponent implements OnInit, OnDestroy {
 
@@ -20,10 +20,10 @@ export class MachinesMonitorComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.machineService.getMachines()
     .pipe(
-      takeWhile(() => this.alive)
+      takeWhile(() => this.alive),
     )
     .subscribe(
-      machines => this.machines = machines
+      machines => this.machines = machines,
     );
   }
 
