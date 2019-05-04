@@ -4,9 +4,9 @@
   ],
   "rules": {
     "trailing-comma": [
-      true,
+      false,
       {
-        "multiline": "never",
+        "multiline": "always",
         "singleline": "never"
       }
     ],
