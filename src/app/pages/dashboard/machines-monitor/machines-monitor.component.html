@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xxxl-3 col-md-3 col-sm-3" *ngFor="let machine of machines">
+  <div class="col" *ngFor="let machine of machines">
     <nb-card status="warning" *ngIf="machine.opStatus==0">
       <nb-card-header>{{ machine.name }}</nb-card-header>
       <nb-card-body>
