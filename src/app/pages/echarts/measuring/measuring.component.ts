@@ -50,7 +50,8 @@ export class MeasuringComponent implements OnInit, OnDestroy {
           },
           legend: {
             left: 'left',
-            data: ['OK Diameter', 'Line Left', 'Line Right'],
+            // data: ['OK Diameter', 'Line Left', 'Line Right'],
+            data: ['Line Left', 'Line Right'],
           },
           xAxis: [
             {
@@ -75,7 +76,7 @@ export class MeasuringComponent implements OnInit, OnDestroy {
           },
           series: [
             {
-              name: 'OK Diameter',
+              // name: 'OK Diameter',
               type: 'line',
               markArea: {
                 data: [
