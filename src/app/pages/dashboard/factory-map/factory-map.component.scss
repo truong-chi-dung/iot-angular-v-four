@@ -70,4 +70,15 @@
           }
         }
     }
+
+    ::ng-deep nb-select {
+        display: block;
+        width: 15rem;
+    }
+    
+    ::ng-deep .monitor-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
 }
