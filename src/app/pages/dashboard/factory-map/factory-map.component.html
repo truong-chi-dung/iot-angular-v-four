@@ -1,0 +1,60 @@
+<nb-card>
+  <div class="header">Factory Map</div>
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" [attr.viewBox]="viewBox"
+      preserveAspectRatio="xMidYMid">
+
+      <!-- <g>
+        <path class="room-border" [attr.d]="border.d" *ngFor="let border of roomSvg.borders" />
+      </g> -->
+      <g>
+        <path class="floor" [attr.d]="mapFloor" />
+      </g>
+
+      <g>
+        <rect class="not-available" x="20" y="20" height="50" width="50" nbPopover="Not available" />
+        <rect class="not-available" x="70" y="20" height="50" width="50" nbPopover="Not available" />
+        <rect class="not-available" x="120" y="20" height="50" width="50" nbPopover="Not available" />
+        <rect class="not-available" x="170" y="20" height="50" width="50" nbPopover="Not available" />
+        <rect class="not-available" x="220" y="20" height="50" width="50" nbPopover="Not available" />
+        <!-- <rect class="running" x="270" y="20" height="50" width="50"/> -->
+        <!-- <path class="running" d="m270,20 v50 h50 v-50 Z" /> -->
+        <!-- <rect class="stop" x="320" y="20" height="50" width="50"/> -->
+        <!-- <path class="stop" d="m320,20 v50 h50 v-50 Z" /> -->
+
+        <g *ngFor="let machine of machines">
+          <path class="stop" [attr.d]="machine.posMap" *ngIf="machine.opStatus==0" [nbPopover]="card"
+            [nbPopoverContext]="{machine:machine}" />
+          <path class="running" [attr.d]="machine.posMap" *ngIf="machine.opStatus==1" [nbPopover]="card"
+            [nbPopoverContext]="{machine:machine}" />
+          <path class="emg" [attr.d]="machine.posMap" *ngIf="machine.opStatus==2" [nbPopover]="card"
+            [nbPopoverContext]="{machine:machine}" />
+        </g>
+      </g>
+
+      <g>
+        <rect class="not-available" x="20" y="80" height="50" width="50" />
+        <rect class="not-available" x="70" y="80" height="50" width="50" />
+        <rect class="not-available" x="120" y="80" height="50" width="50" />
+        <rect class="not-available" x="170" y="80" height="50" width="50" />
+        <rect class="not-available" x="220" y="80" height="50" width="50" />
+        <rect class="not-available" x="270" y="80" height="50" width="50" />
+        <rect class="not-available" x="320" y="80" height="50" width="50" />
+      </g>
+    </svg>
+
+    <ng-template #card let-data>
+      <nb-card class="popover-card">
+        <nb-card-header>
+          {{ data.machine.name }}
+        </nb-card-header>
+        <nb-card-body>
+          Operator: {{ data.machine.operator }}
+          <br>
+          <a class="nav-link" href="/#/pages/echarts">Detail</a>
+        </nb-card-body>
+      </nb-card>
+    </ng-template>
+
+  </div>
+</nb-card>

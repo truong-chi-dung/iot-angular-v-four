@@ -1,0 +1,28 @@
+@import '../../@theme/styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+
+    nb-card {
+        display: flex;
+        flex-direction: row;
+    }
+
+    ngx-factory-map {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    
+        /deep/ .map-selector {
+          display: flex;
+          align-items: center;
+          justify-items: center;
+          flex: 1;
+          margin: 0 auto;
+          width: 90%;
+          max-width: 650px;
+          padding-bottom: 1rem;
+        }
+      }
+}

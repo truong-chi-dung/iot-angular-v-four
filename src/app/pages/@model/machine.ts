@@ -4,4 +4,5 @@ export class Machine {
     opStatus: number;
     position: string;
     operator: string;
+    posMap: string;
   }
