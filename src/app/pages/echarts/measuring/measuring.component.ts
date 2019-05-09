@@ -21,9 +21,9 @@ export class MeasuringComponent implements OnInit, OnDestroy {
   public selectedItem: string;
   public speedVal: number = 5000;
 
-  public pinionDataLeft: PinionShaftMeasureValue[];
+  // public pinionDataLeft: PinionShaftMeasureValue[];
   public pinionDataLeftArr: any = [];
-  public pinionDataRight: PinionShaftMeasureValue[];
+  // public pinionDataRight: PinionShaftMeasureValue[];
   public pinionDataRightArr: any = [];
   public pinionLeftRightData: PinionLeftRightMeasureValue;
 
