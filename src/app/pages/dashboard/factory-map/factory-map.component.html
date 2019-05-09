@@ -46,6 +46,16 @@
           {{ data.machine.name }}
         </nb-card-header>
         <nb-card-body>
+          <ng-container *ngIf="data.machine.opStatus=='run'">
+            Running
+          </ng-container>
+          <ng-container *ngIf="data.machine.opStatus=='stop'">
+            Stop
+          </ng-container>
+          <ng-container *ngIf="data.machine.opStatus=='emg'">
+            Emergency
+          </ng-container>
+          <br>
           Operator: {{ data.machine.operator }}
           <br>
           <a class="nav-link" href="/#/pages/echarts">Detail</a>
