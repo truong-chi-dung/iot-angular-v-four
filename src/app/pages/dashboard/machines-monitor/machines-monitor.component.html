@@ -3,7 +3,15 @@
     <nb-card [attr.class]="machine.opStatus">
       <nb-card-header>{{ machine.name }}</nb-card-header>
       <nb-card-body>
-        Operation status: Stopped
+        <ng-container *ngIf="machine.opStatus=='run'">
+          Running
+        </ng-container>
+        <ng-container *ngIf="machine.opStatus=='stop'">
+          Stop
+        </ng-container>
+        <ng-container *ngIf="machine.opStatus=='emg'">
+          Emergency
+        </ng-container>
         <br>
         Operator: {{ machine.operator }}
       </nb-card-body>
