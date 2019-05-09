@@ -40,6 +40,9 @@ export class ProductionComponent implements OnInit, OnDestroy {
   echartsInstance: any;
 
   ngOnInit() {
+
+    this.updateMeasureValue();
+
     this.pinionShaftService.getProductionBarChartData()
       .subscribe((data) => {
         this.pinionShaftProductionBarChartData = data;
@@ -156,6 +159,11 @@ export class ProductionComponent implements OnInit, OnDestroy {
           this.pinionShaftService.getProductionBarChartData()
             .subscribe((data) => {
 
+              // clear old data
+              this.pinionTargetDataArr = [];
+              this.pinionOkDataArr = [];
+              this.pinionNgDataArr = [];
+
               this.pinionShaftProductionBarChartData = data;
               this.pinionShaftProductionBarChartData.infoProductionData.map((eachValue) => {
                 this.pinionTargetDataArr.push([eachValue.time, eachValue.products]);
@@ -199,7 +207,7 @@ export class ProductionComponent implements OnInit, OnDestroy {
               if (this.echartsInstance) {
                 this.echartsInstance.setOption(this.newDataOption);
               }
-              
+
             });
         }
       );
