@@ -1,7 +1,7 @@
 export class Machine {
     machineId: string;
     name: string;
-    opStatus: number;
+    opStatus: string;
     position: string;
     operator: string;
     posMap: string;
