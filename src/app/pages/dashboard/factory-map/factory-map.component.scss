@@ -1,73 +1,72 @@
-@import '../../../@theme/styles/themes';
-@import '~@nebular/theme/components/card/card.component.theme';
+@import "../../../@theme/styles/themes";
+@import "~@nebular/theme/components/card/card.component.theme";
 
 @include nb-install-component() {
-    
-    svg {
-        width: 100%;
-    }
+  svg {
+    width: 100%;
+  }
 
-    .header {
-        @include nb-card-header();
-        border-bottom: none;
-        padding-bottom: 0;
-    }
+  .header {
+    @include nb-card-header();
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 
-    nb-card.popover-card {
-        margin-bottom: 0;
-        width: 300px;
-        box-shadow: none;
-        @include nb-card-header();
-        border-bottom: none;
-        padding-bottom: 0;
+  nb-card.popover-card {
+    margin-bottom: 0;
+    width: 300px;
+    box-shadow: none;
+    @include nb-card-header();
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .room-border {
+    stroke-width: 4px;
+    stroke: #bdc4cd;
+    stroke-miterlimit: 10;
+    fill: none;
+  }
+
+  .floor {
+    stroke-width: 1px;
+    stroke: #bdc4cd;
+    stroke-miterlimit: 10;
+    fill: none;
+  }
+
+  .not-available {
+    fill: #808080;
+    stroke: #000000;
+  }
+
+  .run {
+    fill: #46ac32;
+    stroke: #000000;
+  }
+
+  .stop {
+    fill: #d4c814;
+    stroke: #000000;
+  }
+
+  .emg {
+    fill: #d81515;
+    stroke: #000000;
+  }
+
+  .room-bg {
+    fill: nb-theme(card-bg);
+    stroke: transparent;
+    cursor: pointer;
+    stroke-width: 4px;
+  }
+
+  @include nb-for-theme(corporate) {
+    .selected-room {
+      .room-border {
+        stroke: nb-theme(color-primary);
       }
-
-    .room-border {
-        stroke-width: 4px;
-        stroke: #bdc4cd;
-        stroke-miterlimit: 10;
-        fill: none;
     }
-
-    .floor {
-        stroke-width: 1px;
-        stroke: #bdc4cd;
-        stroke-miterlimit: 10;
-        fill: none;
-    }
-
-    .not-available {
-        fill:#808080;
-        stroke: #000000;
-    }
-
-    .run {
-        fill:#46ac32;
-        stroke: #000000;
-    }
-
-    .stop {
-        fill:#d4c814;
-        stroke: #000000;
-    }
-
-    .emg {
-        fill:#d81515;
-        stroke: #000000;
-    }
-
-    .room-bg {
-        fill: nb-theme(card-bg);
-        stroke: transparent;
-        cursor: pointer;
-        stroke-width: 4px;
-    }
-
-    @include nb-for-theme(corporate) {
-        .selected-room {
-          .room-border {
-            stroke: nb-theme(color-primary);
-          }
-        }
-    }    
+  }
 }
