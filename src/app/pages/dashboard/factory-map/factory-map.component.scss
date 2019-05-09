@@ -41,7 +41,7 @@
         stroke: #000000;
     }
 
-    .running {
+    .run {
         fill:#46ac32;
         stroke: #000000;
     }
@@ -69,16 +69,5 @@
             stroke: nb-theme(color-primary);
           }
         }
-    }
-
-    ::ng-deep nb-select {
-        display: block;
-        width: 15rem;
-    }
-    
-    ::ng-deep .monitor-header {
-        display: flex;
-        justify-content: space-between;
-    }
-    
+    }    
 }

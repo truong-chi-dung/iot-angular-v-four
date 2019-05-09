@@ -20,12 +20,12 @@
         <!-- <path class="stop" d="m320,20 v50 h50 v-50 Z" /> -->
 
         <g *ngFor="let machine of machines">
-          <path class="stop" [attr.d]="machine.posMap" *ngIf="machine.opStatus==0" [nbPopover]="card"
+          <path [attr.class]="machine.opStatus" [attr.d]="machine.posMap" [nbPopover]="card"
             [nbPopoverContext]="{machine:machine}" />
-          <path class="running" [attr.d]="machine.posMap" *ngIf="machine.opStatus==1" [nbPopover]="card"
+          <!-- <path class="running" [attr.d]="machine.posMap" *ngIf="machine.opStatus==1" [nbPopover]="card"
             [nbPopoverContext]="{machine:machine}" />
           <path class="emg" [attr.d]="machine.posMap" *ngIf="machine.opStatus==2" [nbPopover]="card"
-            [nbPopoverContext]="{machine:machine}" />
+            [nbPopoverContext]="{machine:machine}" /> -->
         </g>
       </g>
 
