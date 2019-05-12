@@ -18,7 +18,7 @@ export class MachinesMonitorComponent implements OnInit, OnDestroy {
   private timeRefreshSubscription: Subscription;
   public selectedItem: string;
   public speedVal: number = 5000;
-  
+
   constructor(
     private machineService: MachineService,
     private refreshService: RefreshService,
@@ -26,18 +26,15 @@ export class MachinesMonitorComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.machineService.getMachines()
-    .pipe(
-      takeWhile(() => this.alive),
-    )
-    .subscribe(
-      machines => this.machines = machines,
-    );
+      .pipe(
+        takeWhile(() => this.alive),
+      )
+      .subscribe(
+        machines => this.machines = machines,
+      );
     this.updateMachineStatus();
   }
 
-  ngOnDestroy() {
-    this.alive = false;
-  }
 
   updateMachineStatus() {
     this.timeRefreshSubscription = this.refreshService.withRefresh()
@@ -50,6 +47,11 @@ export class MachinesMonitorComponent implements OnInit, OnDestroy {
             });
         }
       );
+  }
+
+  ngOnDestroy() {
+    this.alive = false;
+    this.timeRefreshSubscription.unsubscribe();
   }
 
 }

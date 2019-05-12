@@ -14,7 +14,7 @@ export class FactoryMapComponent implements OnInit, OnDestroy {
 
   private alive = true;
   public machines: Machine[];
-  
+
   // viewBox = '-20 -20 618.88 407.99';
   viewBox = '-20 -20 950 450';
   mapFloor = 'M5,5 V395 H895 V5 Z';
@@ -28,7 +28,7 @@ export class FactoryMapComponent implements OnInit, OnDestroy {
   private timeRefreshSubscription: Subscription;
   public selectedItem: string;
   public speedVal: number = 5000;
-  
+
   constructor(
     private machineService: MachineService,
     private refreshService: RefreshService
@@ -36,17 +36,13 @@ export class FactoryMapComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.machineService.getMachines()
-    .pipe(
-      takeWhile(() => this.alive),
-    )
-    .subscribe(
-      machines => this.machines = machines,
-    );
+      .pipe(
+        takeWhile(() => this.alive),
+      )
+      .subscribe(
+        machines => this.machines = machines,
+      );
     this.updateMachineStatus();
-  }
-
-  ngOnDestroy() {
-    this.alive = false;
   }
 
   updateMachineStatus() {
@@ -60,6 +56,12 @@ export class FactoryMapComponent implements OnInit, OnDestroy {
             });
         }
       );
+  }
+
+
+  ngOnDestroy() {
+    this.alive = false;
+    this.timeRefreshSubscription.unsubscribe();
   }
 
 }
