@@ -1,0 +1,14 @@
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/components/card/card.component.theme';
+
+@include nb-install-component() {
+  .run nb-card-header {
+    background: #46ac32;
+  }
+  .stop nb-card-header {
+    background: #d4c814;
+  }
+  .emg nb-card-header {
+    background: #d81515;
+  }
+}

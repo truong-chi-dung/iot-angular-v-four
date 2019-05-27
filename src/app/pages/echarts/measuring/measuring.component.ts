@@ -21,9 +21,9 @@ export class MeasuringComponent implements OnInit, OnDestroy {
   public selectedItem: string;
   public speedVal: number = 5000;
 
-  public pinionDataLeft: PinionShaftMeasureValue[];
+  // public pinionDataLeft: PinionShaftMeasureValue[];
   public pinionDataLeftArr: any = [];
-  public pinionDataRight: PinionShaftMeasureValue[];
+  // public pinionDataRight: PinionShaftMeasureValue[];
   public pinionDataRightArr: any = [];
   public pinionLeftRightData: PinionLeftRightMeasureValue;
 
@@ -50,7 +50,8 @@ export class MeasuringComponent implements OnInit, OnDestroy {
           },
           legend: {
             left: 'left',
-            data: ['OK Diameter', 'Line Left', 'Line Right'],
+            // data: ['OK Diameter', 'Line Left', 'Line Right'],
+            data: ['Line Left', 'Line Right'],
           },
           xAxis: [
             {
@@ -75,7 +76,7 @@ export class MeasuringComponent implements OnInit, OnDestroy {
           },
           series: [
             {
-              name: 'OK Diameter',
+              // name: 'OK Diameter',
               type: 'line',
               markArea: {
                 data: [

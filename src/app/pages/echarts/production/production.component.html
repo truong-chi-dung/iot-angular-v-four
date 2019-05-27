@@ -1,16 +1,18 @@
-<nb-card>
-  <nb-card-header>
-    <div class="monitor-header">
-      <span>Production</span>
-      <nb-select placeholder="Update Speed" [(selected)]="selectedItem" (selectedChange)="onChange($event)"
+<div class="container">
+  <nb-card>
+    <nb-card-header>
+      <div class="monitor-header">
+        <span>Production</span>
+        <!-- <nb-select placeholder="Update Speed" [(selected)]="selectedItem" (selectedChange)="onChange($event)"
         shape="rectangle">
         <nb-option value="1">Low</nb-option>
         <nb-option value="2">Medium</nb-option>
         <nb-option value="3">Fast</nb-option>
-      </nb-select>
-    </div>
-  </nb-card-header>
-  <nb-card-body>
-    <div echarts [options]="options" class="echart" (chartInit)="onChartInit($event)"></div>
-  </nb-card-body>
-</nb-card>
+      </nb-select> -->
+      </div>
+    </nb-card-header>
+    <nb-card-body>
+      <div echarts [options]="options" class="echart" (chartInit)="onChartInit($event)"></div>
+    </nb-card-body>
+  </nb-card>
+</div>
