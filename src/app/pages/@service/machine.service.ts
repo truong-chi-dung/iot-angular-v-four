@@ -11,8 +11,13 @@ export class MachineService {
   constructor(private http: HttpClient) { }
 
   getMachinesUrl = '/api/machines';
+  getMachineByIdUrl = '/api/machine/pinionshaft';
 
   getMachines(): Observable<Machine[]> {
     return this.http.get<Machine[]>(this.getMachinesUrl);
+  }
+
+  getMachineById(): Observable<Machine[]> {
+    return this.http.get<Machine[]>(this.getMachineByIdUrl);
   }
 }

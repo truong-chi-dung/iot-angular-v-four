@@ -13,6 +13,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/echarts',
   },
   {
+    title: 'Detail',
+    icon: 'nb-gear',
+    link: '/pages/details',
+  },
+  {
     title: 'FEATURES',
     group: true,
   },
