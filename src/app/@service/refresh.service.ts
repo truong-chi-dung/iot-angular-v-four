@@ -9,7 +9,7 @@ export class RefreshService {
 
   constructor() { }
 
-  static interval$: BehaviorSubject<number> = new BehaviorSubject<number>(5000);
+  static interval$: BehaviorSubject<number> = new BehaviorSubject<number>(2000);
   setInterval(newInterval: number) {
     RefreshService.interval$.next( newInterval );
   }
