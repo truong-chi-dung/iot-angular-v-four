@@ -1,6 +1,6 @@
 # iot-angular-v-four
 iot-angular-v-four is a part of the Pinion Shaft Measuring Machine Monitor Application that used Angular Framework for front-end application working with [back-end application].
-![alt text](https://github.com/CDTruong/iotservertwo/blob/master/sample-img/spring.png)
+![alt text](https://github.com/CDTruong/iotservertwo/blob/master/sample-img/angular.png)
 
 Pinion Shaft Measuring Machine Monitor Application is used for storing data and use data for analysis for many purposes such as: monitoring, managing production.
 
@@ -20,4 +20,4 @@ Production manager can monitor production rate and use that data for production 
 ## Demo
 ![](https://github.com/CDTruong/iotservertwo/blob/master/sample-img/user-interface.gif)
 
-[front-end application]: https://github.com/truong-chi-dung/iotservertwo
+[back-end application]: https://github.com/truong-chi-dung/iotservertwo
